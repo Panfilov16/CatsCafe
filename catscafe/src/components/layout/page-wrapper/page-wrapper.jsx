@@ -2,14 +2,17 @@ import React from 'react';
 import Header from '../header/header';
 import MainPage from '../../pages/main-pages/main-pages';
 import Footer from '../footer/footer';
+import './style.css';
 
 function PageWrapper(){
     return(
-       <div className='page-wrapper__main'>
+       <>
         <Header />
+        <main className='page-wrapper__main'>
         <MainPage />
+        </main>
         <Footer />
-       </div>
+        </>
     );
 }
 

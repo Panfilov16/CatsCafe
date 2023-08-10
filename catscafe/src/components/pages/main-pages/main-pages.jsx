@@ -1,8 +1,13 @@
 import React from 'react';
+import About from '../../blocks/about/about';
+import StarList from '../../blocks/starlist/starslist';
 
 function MainPage(){
     return(
-       <div></div>
+        <>
+       <About />
+       <StarList />
+       </>
     );
 }
 export default MainPage;
