@@ -2,11 +2,11 @@ import React from 'react';
 import About from '../../blocks/about/about';
 import StarList from '../../blocks/starlist/starslist';
 
-function MainPage(){
+function MainPage({ stars }){
     return(
         <>
        <About />
-       <StarList />
+       <StarList stars={stars}/>
        </>
     );
 }

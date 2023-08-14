@@ -1,26 +1,33 @@
 import React from "react";
 import Title, {TitleSize} from '../title/title';
+import StarIcon from '../star-icon/star-icon';
 import './style.css';
 
-function StarCard(){
-    return(
-     <article className="star-card">
-        <figure className="star-card__figure">
+function StarCard({
+  name, // имя кота
+  about, // информация о коте
+  feature, // особенность (ласковый, новенький и т.д.) CatFeature
+  image // url c фото кота
+}) {
+  return (
+    <article className="star-card">
+      <figure className="star-card__figure">
         <img
-          src="https://i.ibb.co/27Mdx7k/Rectangle-4-2.png"
+          src={image}
           className="star-card__image"
           width={313}
           height={320}
           alt="изображение кота"
         />
-        <span className="star-card__icon">Ласковый</span>
-        </figure>
-        <Title size={TitleSize.SMALL}>Кошка Сью</Title>
-      <p className="star-card__text">
-        Эта юная красавица очень общительная и ласковая уже с первого дня, как
-        приехала в кафе.
-      </p>
-     </article>
-    );
+        <StarIcon className="star-card__icon" feature={feature} />
+      </figure>
+      <Title size={TitleSize.SMALL}>{name}</Title>
+      <p
+        className="star-card__text"
+        dangerouslySetInnerHTML={{ __html: about }}
+      />
+    </article>
+  );
 }
+
 export default StarCard;
